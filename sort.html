@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <div><b>Sorted values:</b></div>
+        <p id="result"></p>
+    </head>
+    <body>
+        <script>
+            let sortType = { sortBy: "empName" };
+            let defaultParam = { sortBy: "empId" };
+            let arrObj = [
+                { empId: "1", empName: "shivam", empSkillSet: "novice Java developer", empJobBand: "2" },
+                { empId: "111", empName: "sudarshan", empSkillSet: "React JS", empJobBand: "2" },
+                { empId: "4", empName: "ranjith", empSkillSet: "React JS", empJobBand: "1.1" },
+                { empId: "98", empName: "rajiv", empSkillSet: "management", empJobBand: "3.2" },
+                { empId: "2", empName: "sachin", empSkillSet: "cricket", empJobBand: "10" },
+                { empId: "2", empName: "sachin", empSkillSet: "cricket", empJobBand: "10" }
+            ];
+            let arrValues = [1, 2, 3, 4, 2, 2, 2, 24, 13, 143, 3412, 43, 35425, 235, 523, 325, 3];
+
+            //////Array Sort
+            function doSort(arrObj, sortType = defaultParam) {
+                if (sortType.sortBy == "empId") {
+                    arrObj.sort(function(a, b) {
+                        return a.empId - b.empId;
+                    });
+                } else if (sortType.sortBy == "empName") {
+                    arrObj.sort(function(a, b) {
+                        return a.empName.localeCompare(b.empName);
+                    });
+                }
+                return arrObj;
+            }
+            console.log(doSort(arrObj));
+
+            /////////////////
+            /* Set Hold only Unique Values*/
+            ////Remove Dulicate Array of Objects
+            // console.log(arrObj);
+            // let jsonObject = arrObj.map(JSON.stringify); /// converted to string using json.stringyfy and mapped to an array using map(array) method
+            // let duplicateSet = new Set(jsonObject); /// new set is created by passing the array
+            // let duplicateArray = Array.from(duplicateSet).map(JSON.parse); /// Set is converted to an array and parsed to an object.
+            // console.log(duplicateArray);
+            ///////////////////
+
+            /////// Remove Duplicate arrays
+            // let duplicateValues = [...new Set(arrValues)]; /////used spread operator to make an array
+            // console.log(duplicateValues);
+            // document.getElementById("result").innerHTML = duplicateArray;
+        </script>
+    </body>
+</html>

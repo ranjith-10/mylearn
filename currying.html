@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <div><b>Curried Value:</b></div>
+        <p id="result"></p>
+    </head>
+    <body>
+        <script>
+            function myClosureDemo(a) {
+                return function(b) {
+                    return function(c) {
+                        return a + b + c;
+                    };
+                };
+            }
+            document.getElementById("result").innerHTML = myClosureDemo(5)(6)(7);
+        </script>
+    </body>
+</html>
