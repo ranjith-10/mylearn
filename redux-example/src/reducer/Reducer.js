@@ -1,15 +1,18 @@
-// const initialState = {
-//     count: 0
-// };
+const initialState = {
+    count: 0,
+    inputvalue: 0
+};
 
-const reducer = (state = 0, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "INCREMENTBY1":
-            return state + 1;
+            return { ...state, count: state.count + 1 };
         case "INCREMENTBY2":
-            return state + 2;
+            return { ...state, count: state.count + 2 };
         case "SUBMIT":
-            return state;
+            return { ...state, count: state.inputvalue };
+        case "SET_TEXTVALUES":
+            return { ...state, inputvalue: action.inputvalue.inputvalue };
         default:
             return state;
     }
