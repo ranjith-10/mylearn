@@ -15,12 +15,10 @@ class TextField extends Component {
                 inputvalue: { inputvalue: Number(event.target.value) }
             },
             () =>
-                this.props.dispatch(
-                    this.props.dispatch({
-                        type: "SET_TEXTVALUES",
-                        inputvalue: this.state.inputvalue
-                    })
-                )
+                this.props.dispatch({
+                    type: "SET_TEXTVALUES",
+                    inputvalue: this.state.inputvalue
+                })
         );
     }
 
